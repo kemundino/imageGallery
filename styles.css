@@ -1,72 +1,124 @@
 /* styles.css */
 body {
-    font-family: Arial, sans-serif;
-    background-image: url('image.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    margin: 0;
-    padding: 0;
-    display: block;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  h1{text-align: center;
+  font-family: Arial, sans-serif;
+  background-image: url('image.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; /* Ensure the background covers the entire screen */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Use min-height to ensure it covers the viewport */
+  flex-direction: column; /* Stack elements vertically */
+}
+
+h1 {
+  text-align: center;
   width: 100%;
   display: block;
   font-style: italic;
   font-size: 40px;
   color: aqua;
+  margin: 20px 0; /* Add some margin for spacing */
+}
+
+.gallery-container {
+  text-align: center;
+  background-color: #fff;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 85%; /* Make the container responsive */
+  max-width: 800px; /* Set a maximum width */
+  margin: 20px auto; /* Center the container */
+}
+
+.gallery {
+  position: relative;
+  max-width: 100%; /* Ensure the gallery is responsive */
+  margin: 0 auto;
+}
+
+#galleryImage {
+  width: 100%; /* Make the image responsive */
+  height: auto; /* Allow height to adjust based on width */
+  max-height: 500px; /* Set a maximum height */
+  border-radius: 10px;
+  transition: opacity 0.5s ease;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.nav-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#prevBtn {
+  left: 10px;
+}
+
+#nextBtn {
+  right: 10px;
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0; /* Ensure the footer stays at the bottom */
+  padding: 10px 0; /* Add some padding */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  h1 {
+      font-size: 32px; /* Reduce font size for smaller screens */
   }
+
   .gallery-container {
-    text-align: center;
-    background-color: #fff;
-    padding: 18px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 10px; /* Reduce padding for smaller screens */
   }
-  
-  .gallery {
-    position: relative;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
+
   #galleryImage {
-    width: 90%;
-    height: 500px;
-    border-radius: 10px;
-    transition: opacity 0.5s ease;
+      max-height: 400px; /* Adjust image height for smaller screens */
   }
-  
+
   .nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-    font-size: 18px;
+      padding: 8px; /* Reduce button size for smaller screens */
+      font-size: 16px;
   }
-  
-  .nav-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 480px) {
+  h1 {
+      font-size: 24px; /* Further reduce font size for very small screens */
   }
-  
-  #prevBtn {
-    left: 10px;
+
+  .gallery-container {
+      padding: 8px; /* Further reduce padding for very small screens */
   }
-  
-  #nextBtn {
-    right: 10px;
+
+  #galleryImage {
+      max-height: 300px; /* Adjust image height for very small screens */
   }
-  footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    position: fixed;
-    width: 100%;
+
+  .nav-btn {
+      padding: 6px; /* Further reduce button size for very small screens */
+      font-size: 14px;
   }
+}

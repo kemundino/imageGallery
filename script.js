@@ -1,7 +1,7 @@
 // script.js
 const images = [
     "-gazelle.jpg",
-    "img2.jpg",
+    "pepper halaba.jpg",
     "img3.jpg",
     "img4.jpg",
     "img5.jpg",
